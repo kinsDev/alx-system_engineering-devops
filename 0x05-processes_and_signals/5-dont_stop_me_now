@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script terminates the '4-to_infinity_and_beyond' process
+# that was initiated in the previous task
+# by sending a termination signal (SIGTERM) to its process ID.
+# We find the process ID using 'pgrep' and the '-f' flag,
+# then pass it to the 'kill' command.
+
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
