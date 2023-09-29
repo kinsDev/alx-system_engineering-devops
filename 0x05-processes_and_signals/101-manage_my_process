@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Script for managing the 'manage_my_process' application.
+
+if [ "${1}" == "start" ]; then
+    # Start the 'manage_my_process' application in the background.
+    ./manage_my_process &
+    # Create a PID file to track the process.
+    touch /var/run/my_process.pid
+    echo "$!" > /var/run/my_process.pid
+    echo "manage_my_process started"
+elif [ "${1}" == "stop" ]; then
+    # Stop the 'manage_my_process' application.
+    echo "manage_my_process stopped"
+    kill "$(cat /var/run/my_process.pid)"
+    rm /var/run/my_process.pid
+elif [ "${1}" == "restart" ]; then
+    # Restart the 'manage_my_process' application.
+    kill "$(cat /var/run/my_process.pid)"
+    rm /var/run/my_process.pid
+    ./manage_my_process &
+    touch /var/run/my_process.pid
+    echo "$!" > /var/run/my_process.pid
+    echo "manage_my_process restarted"
+else
+    # Display usage instructions for the script.
+    echo "Usage: manage_my_process {start|stop|restart}"
+fi
