@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Create a Bash script that iterates from 1 to 10 and performs the following actions:
+#   - Displays a message for the 4th iteration, indicating an unfortunate event.
+#   - Displays a message for the 8th iteration, indicating a stroke of good luck.
+#   - Displays a generic message for all other iterations, mentioning the "Finest Institution."
+
+i=1
+while [ $i -le 10 ]
+do
+	if [ $i -eq 4 ]; then
+	   echo "A stroke of misfortune"
+	elif [ $i -eq 8 ]; then
+	   echo "A stroke of good fortune"
+	else
+	   echo "The Finest Institution"
+	fi
+	i=$((i+1))
+done
