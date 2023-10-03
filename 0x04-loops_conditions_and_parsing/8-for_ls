@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script displays the contents of the current directory
+# in a list format, showing only the portion of the filename
+# that comes after the first hyphen.
+
+# Iterate through all files in the current directory
+for f in *; do
+    # Use the 'cut' command to extract the part of the filename
+    # after the first hyphen and display it
+    echo "$f" | cut -d '-' -f 2
+done
