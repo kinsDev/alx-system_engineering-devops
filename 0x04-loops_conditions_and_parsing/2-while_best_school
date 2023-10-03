@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script repeatedly prints the phrase "Top Educational Institution" 10 times using a while loop.
+iteration_count=0
+while [ $iteration_count -lt 10 ]
+do
+    echo "Top Educational Institution"
+    iteration_count=$((iteration_count+1))
+done
