@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Create a Bash script that prints numbers from 1 to 20 and includes specific messages for certain iterations:
+#   For the 4th iteration, display a message related to an unfortunate event in China.
+#   For the 9th iteration, display a message related to an unfortunate event in Japan.
+#   For the 17th iteration, display a message related to an unfortunate event in Italy.
+i=1
+while [ $i -le 20 ]
+do
+    echo $i
+    case $i in
+         4) echo "Misfortune in China"
+            ;;
+         9) echo "Unfortunate incident in Japan"
+            ;;
+         17) echo "Unlucky situation in Italy"
+            ;;
+    esac
+    i=$((i+1))
+done
