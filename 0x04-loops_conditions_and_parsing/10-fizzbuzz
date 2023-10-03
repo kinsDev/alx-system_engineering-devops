@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script generates and displays numbers, printing "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for multiples of both.
+for ((n=1;n<=100;n++))
+do
+    if ((n % 15 == 0))
+    then
+        echo "FizzBuzz"
+    elif ((n % 3 == 0))
+    then
+        echo "Fizz"
+    elif ((n % 5 == 0))
+    then
+        echo "Buzz"
+    else
+        echo "$n"
+    fi
+done
