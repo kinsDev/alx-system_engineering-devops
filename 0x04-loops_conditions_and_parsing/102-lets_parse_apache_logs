@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This Bash script extracts the visitor IP and HTTP status code from the Apache log file.
+
+# Use the 'awk' command to extract the first and ninth fields (IP and status code) from the log file.
+awk '{ print $1,$9 }' apache-access.log
