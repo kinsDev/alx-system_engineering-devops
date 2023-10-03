@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This Bash script reads and displays information from the file /etc/passwd
+# using a while loop and the IFS (Internal Field Separator).
+
+while IFS=: read -r username password userid groupname homedir shell; do
+    echo "The user $username belongs to the group $groupname, resides in $homedir, and uses the shell $shell. The user's password is protected by the passcode $password. For additional information about the user, refer to $userid."
+done </etc/passwd
