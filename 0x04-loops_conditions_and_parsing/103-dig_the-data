@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This Bash script processes an Apache access log, grouping visitors by their IP addresses and HTTP status codes.
+
+# Extracts the IP address and HTTP status code columns from the log file.
+awk '{ print $1, $9 }' apache-access.log |
+  # Sorts the data for grouping.
+  sort |
+  # Counts the occurrences of each unique combination and sorts them in descending order.
+  uniq -c |
+  sort -nr
